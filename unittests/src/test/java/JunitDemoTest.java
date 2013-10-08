@@ -31,12 +31,14 @@ public class JunitDemoTest {
 	
 	@Test
 	public void join() {
-		assertEquals(junitDemoObject.join(fooString, barString), "foo bar");
+//		System.out.println(junitDemoObject.join(fooString, barString));
+		assertEquals(junitDemoObject.join(fooString, barString), "foo bar ");
 	}
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-	}
+		junitDemoObject = new JunitDemo();
+	} 
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
