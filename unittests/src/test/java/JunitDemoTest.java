@@ -20,8 +20,18 @@ public class JunitDemoTest {
 	}
 	
 	@Test
-	public void testCapitalize() {
+	public void testFooCapitalize() {
 		assertEquals(junitDemoObject.capitalize(fooString), "Foo");
+	}
+	
+	@Test
+	public void testBarCapitalize() {
+		assertEquals(junitDemoObject.capitalize(barString), "Bar");
+	}
+	
+	@Test
+	public void testNrCapitalize() {
+		assertEquals(junitDemoObject.capitalize("123FOO"), "123foo");
 	}
 	
 	@Test
@@ -31,8 +41,7 @@ public class JunitDemoTest {
 	
 	@Test
 	public void join() {
-//		System.out.println(junitDemoObject.join(fooString, barString));
-		assertEquals(junitDemoObject.join(fooString, barString), "foo bar ");
+		assertEquals(junitDemoObject.join(fooString, barString, "!"), "foo BAR !");
 	}
 	
 	@BeforeClass
@@ -47,7 +56,7 @@ public class JunitDemoTest {
 	@Before
 	public void setUp() throws Exception {
 		fooString = "foo";
-		barString = "bar";
+		barString = "BAR";
 		emptyString = "";
 	}
 

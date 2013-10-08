@@ -37,6 +37,8 @@ public class JunitDemo implements IMdpJunitDemo {
 		for(String s:strings) {
 			output += s + " ";		// alternative: output += s += " "; (parsed from right to left)
 		}
+
+	    output = output.substring(0,output.length()-1);		// remove space at the end
 		return output;
 	}
 
